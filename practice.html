@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice</title>
+</head>
+<body>
+<form method="POST">     <!-- code to display form-->
+      {%csrf_token%}
+    <input type='text' id="search" name="searched_book">
+    <label for="search" >search </label>
+
+<h1>{{ object.Title}}</h1>
+<h3>{{ object.Issued}}</h3>
+</body>
+</html>

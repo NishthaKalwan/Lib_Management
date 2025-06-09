@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+<p>
+    <h2>Books are a gateway to knowledge, imagination, and new worlds.</h2>
+</p>
+<ul>
+    <li><button><a href="{% url 'create' %}">ADD BOOK</a></button></li>
+    <li><button><a href="{% url 'search' %}">SEARCH BOOK</a></button></li><!--this listing is same we set as name in urls.py for path for listing-->
+    <hr>
+    <button><a href="{% url 'home' %}">back</a></button>
+</ul>
+{% endblock %}
+
+
+{# 2nd page after selecting Books #}

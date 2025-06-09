@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    <meta charset="UTF-8">
+    <title>practice</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<h3> Search book</h3>
+{{text}}
+<form method="POST">     <!-- code to display form-->
+      {%csrf_token%}
+
+
+    <input type='text' id="search" name="searched_book">
+    <label for="search" >search </label>
+     <button type="submit">Search</button>
+    {% for name in s_book %}
+        <p>{{name.Title}}</p>
+    {% endfor %}
+    <p><button type="submit" name="show_books"> Display all Books</button></p>
+
+</form>
+{% if show_books %}
+    {% for books in all_books %}        <!-- for printing book details -->
+   <p>{{books.id}} <a href="{% url 'd_book' books.Title%}">{{books.Title}}</a></p>
+    {% endfor %}
+{% endif %}
+<button><a href="{% url 'books'%}">back</a></button>
+
+{% endblock %}
+

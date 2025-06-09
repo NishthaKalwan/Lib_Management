@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<ul>
+  <li>Title : {{book.Title}}</li>
+  <li>Author : {{book.Author}}</li>
+  <li>Publisher: {{book.Publisher}}</li>
+  <li>Price : {{book.Price}}</li>
+  <li>Issued : {{book.Issued}}</li>
+</ul>
+
+{% if book.Issued %}
+  <p><strong>Note:</strong> This book is currently issued.</p>
+  <a href="{% url 'view_issued_books' %}"><button>View Issued Books</button></a>
+{% endif %}
+
+<button><a href="{% url 'update' book.Title %}"> UPDATE BOOK</a> </button>
+<button><a href="{% url 'delete' book.Title %}"> DELETE BOOK</a> </button>
+{% endblock %}

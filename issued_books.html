@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Book</th>
+        <th>Issue Date</th>
+        <th>Fine (₹)</th>
+    </tr>
+    {% for book, fine in books_with_fine %}
+    <tr>
+        <td>{{ book.book_title }}</td>
+        <td>{{ book.issue_date }}</td>
+        <td>{{ fine }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

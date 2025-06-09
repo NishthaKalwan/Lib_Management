@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    <meta charset="UTF-8">
+    <title>DELETION </title>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<h1>BOOK DELETION</h1>
+
+<a href="{% url 'delete' book.Title %}" onclick="return confirm('Are you sure you want to delete this book?');">
+    <button>Delete</button>
+</a>
+
+{% endblock %}

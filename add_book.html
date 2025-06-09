@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<form method="POST">      {#POST is to submit the data as request object determine if the form submission(post) or just showing the form(GET)#}
+    {%csrf_token%}           <!-- for security reasons-->
+    <!-- <h1> Name : {{name}}</h1>     {{name }} is variable from view.py context & on screen its like => Name: Nishtha -->
+
+    <h3>Add Book Details </h3>
+    {{new_book.as_p}}            {# -.as_p means each field inside <p> </p>#}
+    <button type="submit" value="create book">Add Book</button>
+</form>
+<button><a href="{% url 'books' %}">back</a></button>     <!-- to direct back button to home page-->
+{% endblock %}
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block content %}
+    <meta charset="UTF-8">
+    <title>Library Management API</title>
+</head>
+<body>
+
+<header>
+    <h1 style="text-align: center; ">DiGiLib Management API</h1>
+</header>
+
+<p>
+    <nav class="navbar">
+
+            <li style="text-align: center;"><a href="{%url 'books'   %}">Books</a></li>       <!--    this line will take you to create/-->
+            <li style="text-align: center;"><a href="contact">Contact Detail</a></li>     <!--   this line will take you to /login/contact-->
+            {% if request.user.is_staff %}
+            <li style="text-align: center;"><a href="{%url 'SubAdminregister' %}">SubAdmin Registration</a></li>
+             {% endif %}
+    <!--about page too -->
+    </nav>
+</p>
+
+{% endblock  %}
+</body>
+</html>
+
+<!-- first page ->
+                  BOOKS                            Contact
+                    |
+        Addbook         searchbook
+            |               |
+                     |            |
+                Update book    Delete Book
